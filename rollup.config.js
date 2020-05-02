@@ -3,13 +3,15 @@ import multi from '@rollup/plugin-multi-entry';
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import { uglify } from 'rollup-plugin-uglify';
-import { readdirSync } from 'fs';
 
 const extensions = ['.ts'];
 
 export default [
   {
-    input: readdirSync('src/').map((file) => `src/${file}`),
+    input: {
+      include: ['src/**/*.ts'],
+      exclude: ['src/**/*.test.ts']
+    },
     output: {
       file: 'index.js',
       name: 'satchel',
