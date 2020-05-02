@@ -1,0 +1,55 @@
+{
+  "name": "satchel-css",
+  "version": "0.0.0",
+  "description": "A little bag of CSS-in-JS superpowers",
+  "main": "index.js",
+  "scripts": {
+    "develop": "rollup -c -w",
+    "build": "rollup -c",
+    "test": "jest",
+    "clean": "rm ./index.js",
+    "prepublishOnly": "npm test && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/radioactivepesto/satchel.git"
+  },
+  "keywords": [
+    "css-in-js",
+    "emotion",
+    "styled-components",
+    "css-utilities",
+    "css",
+    "rucksack",
+    "jss",
+    "linaria",
+    "react",
+    "functional-css"
+  ],
+  "author": "Radioactive Pesto (https://radioactivepesto.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/radioactivepesto/satchel/issues"
+  },
+  "homepage": "https://github.com/radioactivepesto/satchel#readme",
+  "dependencies": {
+    "color": "^3.1.2",
+    "css-unit-converter": "^1.1.1",
+    "parse-unit": "^1.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "@babel/preset-typescript": "^7.9.0",
+    "@rollup/plugin-babel": "^5.0.0",
+    "@rollup/plugin-commonjs": "^11.1.0",
+    "@rollup/plugin-multi-entry": "^3.0.0",
+    "@rollup/plugin-node-resolve": "^7.1.3",
+    "@types/color": "^3.0.1",
+    "@types/jest": "^25.2.1",
+    "@types/parse-unit": "^1.0.1",
+    "jest": "^25.5.3",
+    "rollup": "^2.7.6",
+    "rollup-plugin-uglify": "^6.0.4"
+  }
+}

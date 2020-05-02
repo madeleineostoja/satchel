@@ -1,0 +1,9 @@
+# Deps
+node_modules
+
+# Compiled
+/index.js
+
+# Runtime
+.DS_Store
+*.log
