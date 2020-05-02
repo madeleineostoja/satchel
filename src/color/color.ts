@@ -1,4 +1,20 @@
-const Color = require('color');
+function rgbToHex(r: number, g: number, b: number): string {
+  return `#${((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1)}`;
+}
+
+function hexToRgb(hexString: string): number[] {
+  const hex = hexString.replace(
+      /^#?([a-f\d])([a-f\d])([a-f\d])$/i,
+      (m, r, g, b) => r + r + g + g + b + b
+    ),
+    rgb = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+
+  if (!rgb) {
+    return [];
+  }
+
+  return rgb.slice(1).map((val) => parseInt(val, 16));
+}
 
 /**
  * Generate rgba colours from a hex code
@@ -6,7 +22,7 @@ const Color = require('color');
  * @param alpha Alpha amout
  */
 export function rgba(hex: string, alpha = 1) {
-  return Color(hex).alpha(alpha).rgb().string();
+  return `rgba(${hexToRgb(hex)}, ${alpha})`;
 }
 
 /**
@@ -16,5 +32,5 @@ export function rgba(hex: string, alpha = 1) {
  * @param b Blue channel
  */
 export function hex(r: number, g: number, b: number) {
-  return Color({ r, g, b }).hex();
+  return rgbToHex(r, g, b);
 }
