@@ -3,6 +3,10 @@
   "version": "0.1.5",
   "description": "A little bag of CSS-in-JS superpowers",
   "main": "index.js",
+  "files": [
+    "index.js",
+    "index.d.ts"
+  ],
   "scripts": {
     "develop": "rollup -c -w",
     "build": "rollup -c",
