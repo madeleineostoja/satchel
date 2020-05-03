@@ -7,8 +7,9 @@
     "develop": "rollup -c -w",
     "build": "rollup -c",
     "test": "jest",
+    "tsDecl": "tsc --project tsconfig.types.json -d --emitDeclarationOnly --outFile 'index.d.ts'",
     "clean": "rm ./index.js",
-    "prepublishOnly": "npm test && npm run build"
+    "prepublishOnly": "npm test && npm run tsDecl && npm run build"
   },
   "repository": {
     "type": "git",
@@ -50,6 +51,7 @@
     "@types/parse-unit": "^1.0.1",
     "jest": "^25.5.3",
     "rollup": "^2.7.6",
-    "rollup-plugin-uglify": "^6.0.4"
+    "rollup-plugin-uglify": "^6.0.4",
+    "typescript": "^3.8.3"
   }
 }
