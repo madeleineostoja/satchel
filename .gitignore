@@ -3,6 +3,7 @@ node_modules
 
 # Compiled
 /index.js
+/index.d.ts
 
 # Runtime
 coverage
