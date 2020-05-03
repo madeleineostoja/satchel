@@ -34,7 +34,6 @@
   },
   "homepage": "https://github.com/radioactivepesto/satchel#readme",
   "dependencies": {
-    "babel-plugin-remove-template-literals-whitespace": "^1.0.2",
     "css-unit-converter": "^1.1.1",
     "parse-unit": "^1.0.1"
   },
@@ -49,6 +48,7 @@
     "@types/color": "^3.0.1",
     "@types/jest": "^25.2.1",
     "@types/parse-unit": "^1.0.1",
+    "babel-plugin-remove-template-literals-whitespace": "^1.0.2",
     "jest": "^25.5.3",
     "rollup": "^2.7.6",
     "rollup-plugin-uglify": "^6.0.4",
