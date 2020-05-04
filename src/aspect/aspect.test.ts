@@ -1,4 +1,4 @@
-import { aspectRatio } from '.';
+import { aspect } from '.';
 
 const FIXTURES = {
   aspect: `
@@ -21,10 +21,10 @@ const FIXTURES = {
 
 describe('Aspect ratio', () => {
   test('Generates correct padding', () => {
-    expect(aspectRatio(16, 9, { mode: 'lite' })).toMatchString(FIXTURES.aspect);
+    expect(aspect(16, 9, { mode: 'lite' })).toMatchString(FIXTURES.aspect);
   });
   test('Includes extra styles for patterns', () => {
-    expect(aspectRatio(16, 9, { mode: 'expandable' })).toMatchString(
+    expect(aspect(16, 9, { mode: 'expandable' })).toMatchString(
       `${FIXTURES.expandable}${FIXTURES.aspect}`
     );
   });
