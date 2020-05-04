@@ -27,13 +27,31 @@ export function fontFace(
     ...opts
   };
 
+  function getFormat(val: string, type: string) {
+    const isExt = Object.keys(FONT_TYPES).includes(val);
+
+    switch (type) {
+      case 'extension':
+        return isExt
+          ? val
+          : Object.keys(FONT_TYPES).find((ext) => FONT_TYPES[ext] === val);
+      case 'format':
+        return isExt ? FONT_TYPES[val] : val;
+      default:
+        return '';
+    }
+  }
+
   return `
   @font-face {
     font-family: "${name}";
     src: ${formats
       .map(
         (format) =>
-          `url("${filePath}.${format}") format("${FONT_TYPES[format]}")`
+          `url("${filePath}.${getFormat(
+            format,
+            'extension'
+          )}") format("${getFormat(format, 'format')}")`
       )
       .join(',\n')};
     font-weight: ${options.weight};

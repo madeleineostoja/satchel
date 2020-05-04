@@ -20,6 +20,15 @@ const FIXTURES = {
     font-style: italic;
     font-display: swap;
   }
+  `,
+  format: `
+    @font-face {
+      font-family: "My Font";
+      src: url("/assets/fonts/my-font.ttf") format("truetype");
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
   `
 };
 
@@ -37,5 +46,11 @@ describe('Fonts', () => {
         style: 'italic'
       })
     ).toMatchString(FIXTURES.custom);
+  });
+
+  test('Takes font format names', () => {
+    expect(
+      fontFace('My Font', '/assets/fonts/my-font', ['truetype'])
+    ).toMatchString(FIXTURES.format);
   });
 });
