@@ -23,13 +23,13 @@ const FIXTURES = {
       font-size: 19px;
     }`,
   lineHeight: `
-    line-height: calc(1em + 0.5 * ((100vw - 30em) / 50));
+    line-height: calc(1em + 0.5 * ((100vw - 480px) / 800));
 
-    @media (max-width: 30em) {
+    @media (max-width: 480px) {
       line-height: 1em;
     }
 
-    @media (min-width: 80em) {
+    @media (min-width: 1280px) {
       line-height: 1.5em;
     }`
 };
@@ -53,7 +53,7 @@ describe('Fluid units', () => {
     ).toMatchString(FIXTURES.differentUnits);
   });
 
-  test('Generates fluid units for other properties', () => {
+  test('Generates fluid units for other properties with defaults', () => {
     expect(fluid('line-height', '1em', '1.5em')).toMatchString(
       FIXTURES.lineHeight
     );
