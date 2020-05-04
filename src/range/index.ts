@@ -3,47 +3,53 @@
 // See https://www.w3.org/TR/selectors-3/#Conformance
 
 /**
- * Mixin for styling inconsistent <input type="range" />
- * @param css CSS to apply to track and thumb
+ * Mixin for styling inconsistent <input type="range" /> track
+ * @param css CSS to apply to tack
  */
-export function range({
-  track,
-  thumb
-}: { track?: string; thumb?: string } = {}) {
+function track(css: TemplateStringsArray) {
+  const styles = typeof css === 'string' ? css : css.join();
+
   return `
     -webkit-appearance: none;
     &::-moz-focus-outer {
       border: 0;
     }
-    ${
-      track
-        ? `&::-webkit-slider-runnable-track {
-          -webkit-appearance: none;
-          ${track}
-        }
-        &::-moz-range-track  {
-          -moz-appearance: none;
-          ${track}
-        }
-        &::-ms-track  {
-          ${track}
-        }`
-        : ''
+    &::-webkit-slider-runnable-track {
+      -webkit-appearance: none;
+      ${styles}
     }
-    ${
-      thumb
-        ? `&::-webkit-slider-thumb {
-        -webkit-appearance: none;
-        ${thumb}
-      }
-      &::-moz-range-thumb {
-        -moz-appearance: none;
-        ${thumb}
-      }
-      &::-ms-thumb {
-        ${thumb}
-      }`
-        : ''
+    &::-moz-range-track  {
+      -moz-appearance: none;
+      ${styles}
     }
-  `;
+    &::-ms-track  {
+      ${styles}
+    }`;
 }
+
+/**
+ * Mixin for styling inconsistent <input type="range" /> thumb
+ * @param css CSS to apply to thumb
+ */
+function thumb(css: TemplateStringsArray | string) {
+  const styles = typeof css === 'string' ? css : css.join();
+
+  return `
+    -webkit-appearance: none;
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      ${styles}
+    }
+    &::-moz-range-thumb {
+      -moz-appearance: none;
+      ${styles}
+    }
+    &::-ms-thumb {
+      ${styles}
+    }`;
+}
+
+export const range = {
+  track,
+  thumb
+};

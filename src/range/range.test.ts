@@ -1,12 +1,11 @@
 import { range } from '.';
 
 const FIXTURES = {
-  base: `
+  track: `
     -webkit-appearance: none;
     &::-moz-focus-outer {
       border: 0;
-    }`,
-  track: `
+    }
     &::-webkit-slider-runnable-track {
       -webkit-appearance: none;
       height: 2px;
@@ -23,6 +22,7 @@ const FIXTURES = {
     }
   `,
   thumb: `
+  -webkit-appearance: none;
   &::-webkit-slider-thumb {
     -webkit-appearance: none;
     height: 5px;
@@ -44,30 +44,22 @@ const FIXTURES = {
 };
 
 describe('Range', () => {
-  test('Applies base properties', () => {
-    expect(range()).toMatchString(FIXTURES.base);
-  });
-
   test('Applies track properties', () => {
     expect(
-      range({
-        track: `
+      range.track`
       height: 2px;
       background: grey;
     `
-      })
-    ).toMatchString(`${FIXTURES.base}${FIXTURES.track}`);
+    ).toMatchString(FIXTURES.track);
   });
 
   test('Applies thumb properties', () => {
     expect(
-      range({
-        thumb: `
+      range.thumb`
       height: 5px;
       width: 5px;
       border-radius: 5px;
     `
-      })
-    ).toMatchString(`${FIXTURES.base}${FIXTURES.thumb}`);
+    ).toMatchString(FIXTURES.thumb);
   });
 });
