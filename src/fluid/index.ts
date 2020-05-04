@@ -15,7 +15,7 @@ export function fluid(
   max: string,
   opts?: { minScreenSize?: string; maxScreenSize?: string }
 ) {
-  const options = { minScreenSize: '30em', maxScreenSize: '80em', ...opts };
+  const options = { minScreenSize: '480px', maxScreenSize: '1280px', ...opts };
 
   function getDifference(a: string, b: string) {
     const values = {
