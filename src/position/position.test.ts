@@ -51,4 +51,8 @@ describe('Positioning', () => {
       FIXTURES.fourUnit
     );
   });
+
+  test('Works with number', () => {
+    expect(position('absolute', 0)).toMatchString(FIXTURES.singleUnit);
+  });
 });

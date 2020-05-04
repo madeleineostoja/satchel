@@ -52,8 +52,8 @@ function parseValues(
  * @param position Position property to generate
  * @param values Shorthand value string
  */
-export function position(position: string, values: string) {
-  const { top, right, bottom, left } = parseValues(values);
+export function position(position: string, values: string | number) {
+  const { top, right, bottom, left } = parseValues(values.toString());
 
   return `
     position: ${position};
