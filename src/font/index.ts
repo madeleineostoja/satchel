@@ -9,14 +9,14 @@ const FONT_TYPES: any = {
 
 /**
  * Font face declaration generator
- * @param family Name of the font family
- * @param path Path to the font file (without file extension)
+ * @param name Name of the font family
+ * @param filePath Path to the font file (without file extension)
  * @param formats Array of formats to generate
  * @param options Font options
  */
 export function fontFace(
-  family: string,
-  path: string,
+  name: string,
+  filePath: string,
   formats = ['woff, woff2'],
   opts?: { weight?: string | number; style?: string; display?: string }
 ) {
@@ -29,10 +29,11 @@ export function fontFace(
 
   return `
   @font-face {
-    font-family: "${family}";
+    font-family: "${name}";
     src: ${formats
       .map(
-        (format) => `url("${path}.${format}") format("${FONT_TYPES[format]}")`
+        (format) =>
+          `url("${filePath}.${format}") format("${FONT_TYPES[format]}")`
       )
       .join(',\n')};
     font-weight: ${options.weight};
