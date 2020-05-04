@@ -1,4 +1,4 @@
-import { range } from './range';
+import { range } from '.';
 
 const FIXTURES = {
   base: `

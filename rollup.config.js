@@ -1,27 +1,24 @@
-import babel from '@rollup/plugin-babel';
 import commonjs from '@rollup/plugin-commonjs';
-import multi from '@rollup/plugin-multi-entry';
 import resolve from '@rollup/plugin-node-resolve';
+import typescript from '@wessberg/rollup-plugin-ts';
 import { uglify } from 'rollup-plugin-uglify';
 
 const extensions = ['.ts'];
 
 export default [
   {
-    input: {
-      include: ['src/**/*.ts'],
-      exclude: ['src/**/*.test.ts']
-    },
+    input: 'src/index.ts',
     output: {
-      file: 'index.js',
+      dir: '.',
       name: 'satchel',
       format: 'iife'
     },
     plugins: [
-      multi(),
-      babel({ extensions }),
       resolve({ extensions, browser: true }),
       commonjs(),
+      typescript({
+        transpiler: 'babel'
+      }),
       uglify()
     ]
   }

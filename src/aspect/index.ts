@@ -37,7 +37,7 @@ const STYLES = {
  * @param x X aspect
  * @param y Y aspect
  */
-export function aspectRatio(
+export function aspect(
   x: number,
   y: number,
   options: Options = {

@@ -1,4 +1,4 @@
-import { aspectRatio } from './aspect';
+import { aspectRatio } from '.';
 
 const FIXTURES = {
   aspect: `

@@ -1,4 +1,4 @@
-import { fontFace } from './font';
+import { fontFace } from '.';
 
 const FIXTURES = {
   basic: `

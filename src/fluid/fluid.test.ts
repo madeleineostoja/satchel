@@ -1,4 +1,4 @@
-import { fluid } from './fluid';
+import { fluid } from '.';
 
 // prettier-ignore
 const FIXTURES = {

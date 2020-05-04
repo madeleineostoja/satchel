@@ -6,6 +6,8 @@
 
     /* Type-Checking Options */
     "strict": true,
+    "declaration": true,
+    "removeComments": true,
 
     /* Module resoltion */
     "moduleResolution": "node",

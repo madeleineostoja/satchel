@@ -1,4 +1,4 @@
-import { rgba, hex } from './color';
+import { rgba, hex } from '.';
 
 describe('Color functions', () => {
   test('Converts hex to rgba', () => {

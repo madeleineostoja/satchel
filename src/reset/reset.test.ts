@@ -1,4 +1,4 @@
-import { reset } from './reset';
+import { reset } from '.';
 
 const FIXTURES = {
   input: `

@@ -1,4 +1,4 @@
-import { msGridRows } from './subgrid';
+import { msGridRows } from '.';
 
 const FIXTURES = {
   msRowsDefault: `

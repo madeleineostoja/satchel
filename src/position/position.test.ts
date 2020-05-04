@@ -1,4 +1,4 @@
-import { position } from './position';
+import { position } from '.';
 
 const FIXTURES = {
   singleUnit: `

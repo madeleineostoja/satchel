@@ -1,4 +1,4 @@
 {
-  "presets": ["@babel/preset-typescript", "@babel/preset-env"],
+  "presets": ["@babel/preset-env"],
   "plugins": ["remove-template-literals-whitespace"]
 }
