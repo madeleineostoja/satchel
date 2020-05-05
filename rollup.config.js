@@ -11,7 +11,7 @@ export default [
     output: {
       dir: '.',
       name: 'satchel',
-      format: 'iife'
+      format: 'umd'
     },
     plugins: [
       resolve({ extensions, browser: true }),
