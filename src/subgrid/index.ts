@@ -17,7 +17,7 @@ export function msGridRows(n = 5) {
   const rows = [];
 
   for (let i = 1; i <= n; i++) {
-    rows.push(`& > :nth-child(${i}) {
+    rows.push(`& > :nth-of-type(${i}) {
       -ms-grid-row: ${i};
     }`);
   }

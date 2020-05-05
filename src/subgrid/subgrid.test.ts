@@ -2,27 +2,27 @@ import { msGridRows } from '.';
 
 const FIXTURES = {
   msRowsDefault: `
-  & > :nth-child(1) {
+  & > :nth-of-type(1) {
     -ms-grid-row: 1;
   }
-  & > :nth-child(2) {
+  & > :nth-of-type(2) {
     -ms-grid-row: 2;
   }
-  & > :nth-child(3) {
+  & > :nth-of-type(3) {
     -ms-grid-row: 3;
   }
-  & > :nth-child(4) {
+  & > :nth-of-type(4) {
     -ms-grid-row: 4;
   }
-  & > :nth-child(5) {
+  & > :nth-of-type(5) {
     -ms-grid-row: 5;
   }
   `,
   msRowsCustom: `
-  & > :nth-child(1) {
+  & > :nth-of-type(1) {
     -ms-grid-row: 1;
   }
-  & > :nth-child(2) {
+  & > :nth-of-type(2) {
     -ms-grid-row: 2;
   }
   `
