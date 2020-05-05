@@ -1,6 +1,6 @@
 {
   "name": "satchel-css",
-  "version": "0.3.0",
+  "version": "0.5.0",
   "description": "A little bag of CSS-in-JS superpowers",
   "main": "index.js",
   "types": "typings/index.d.ts",
