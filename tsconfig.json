@@ -6,6 +6,8 @@
 
     /* Type-Checking Options */
     "strict": true,
+
+    /* Compiler options */
     "declaration": true,
     "removeComments": true,
 
