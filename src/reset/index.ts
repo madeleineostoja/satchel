@@ -26,6 +26,19 @@ const RESETS = {
     line-height: 1;
     overflow: auto;
     -webkit-appearance: none;
+  `,
+  list: `
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  `,
+  blockquote: `
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+    &::before, &::after {
+      content: '';
+    }
   `
 };
 
