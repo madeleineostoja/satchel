@@ -34,14 +34,15 @@ const FIXTURES = {
 
 describe('Fonts', () => {
   test('Generates @font-face rules', () => {
-    expect(
-      fontFace('My Font', '/assets/fonts/my-font', ['woff2', 'woff'])
-    ).toMatchString(FIXTURES.basic);
+    expect(fontFace('My Font', '/assets/fonts/my-font')).toMatchString(
+      FIXTURES.basic
+    );
   });
 
   test('Generates @font-face rules with extra config', () => {
     expect(
-      fontFace('My Font', '/assets/fonts/my-font', ['woff', 'ttf'], {
+      fontFace('My Font', '/assets/fonts/my-font', {
+        formats: ['woff', 'ttf'],
         weight: 700,
         style: 'italic'
       })
@@ -50,7 +51,7 @@ describe('Fonts', () => {
 
   test('Takes font format names', () => {
     expect(
-      fontFace('My Font', '/assets/fonts/my-font', ['truetype'])
+      fontFace('My Font', '/assets/fonts/my-font', { formats: ['truetype'] })
     ).toMatchString(FIXTURES.format);
   });
 });

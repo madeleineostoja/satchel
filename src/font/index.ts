@@ -1,33 +1,39 @@
-const FONT_TYPES: any = {
+const FONT_TYPES = {
   woff: 'woff',
   woff2: 'woff2',
   ttf: 'truetype',
   otf: 'opentype',
   eot: 'embedded-opentype',
   svg: 'svg'
-};
+} as const;
+
+type FileFormats = keyof typeof FONT_TYPES;
 
 /**
  * Font face declaration generator
  * @param name Name of the font family
  * @param filePath Path to the font file (without file extension)
- * @param formats Array of formats to generate
  * @param options Font options
  */
 export function fontFace(
   name: string,
   filePath: string,
-  formats = ['woff, woff2'],
-  opts?: { weight?: string | number; style?: string; display?: string }
+  opts?: {
+    formats: any;
+    weight?: string | number;
+    style?: string;
+    display?: string;
+  }
 ) {
   const options = {
+    formats: ['woff2', 'woff'],
     weight: 'normal',
     style: 'normal',
     display: 'swap',
     ...opts
   };
 
-  function getFormat(val: string, type: string) {
+  function getFormat(val: FileFormats, type: string) {
     const isExt = Object.keys(FONT_TYPES).includes(val);
 
     switch (type) {
@@ -45,9 +51,9 @@ export function fontFace(
   return `
   @font-face {
     font-family: "${name}";
-    src: ${formats
+    src: ${options.formats
       .map(
-        (format) =>
+        (format: FileFormats) =>
           `url("${filePath}.${getFormat(
             format,
             'extension'
