@@ -49,14 +49,6 @@ const BASE = {
         font-size: inherit;
         font-weight: inherit;
       }
-    `,
-    resetLists: `
-      ol,
-      ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-      }
     `
   };
 
@@ -66,7 +58,6 @@ export type NormalizeProps = {
   hiddenProp?: boolean;
   resetMargins?: boolean;
   resetHeadings?: boolean;
-  resetLists?: boolean;
 };
 
 export function normalize({
@@ -74,8 +65,7 @@ export function normalize({
   saneEmbeds = true,
   hiddenProp = true,
   resetMargins,
-  resetHeadings,
-  resetLists
+  resetHeadings
 }: NormalizeProps) {
   return `
     ${BASE[base]}
@@ -83,6 +73,5 @@ export function normalize({
     ${hiddenProp ? OPTIONS.hiddenProp : ''}
     ${resetMargins ? OPTIONS.resetMargins : ''}
     ${resetHeadings ? OPTIONS.resetHeadings : ''}
-    ${resetLists ? OPTIONS.resetLists : ''}
   `;
 }
