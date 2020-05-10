@@ -39,6 +39,20 @@ const RESETS = {
     &::before, &::after {
       content: '';
     }
+  `,
+  fieldset: `
+    border: 0;
+    padding: 0.01em 0 0 0;
+    margin: 0;
+    min-width: 0;
+
+    body:not(:-moz-handler-blocked) & {
+      display: table-cell;
+    }
+  `,
+  legend: `
+    padding: 0;
+    display: table;
   `
 };
 
