@@ -1,4 +1,4 @@
-const FONT_TYPES = {
+const FONT_TYPES: any = {
   woff: 'woff',
   woff2: 'woff2',
   ttf: 'truetype',
@@ -19,7 +19,7 @@ type FontFormats = typeof FONT_TYPES[FileFormats];
 export function fontFace(
   name: string,
   filePath: string,
-  formats: FileFormats[] | FontFormats[] = ['woff2', 'woff'],
+  formats: (FileFormats | FontFormats)[] = ['woff2', 'woff'],
   opts?: {
     weight?: string | number;
     style?: string;
@@ -33,7 +33,7 @@ export function fontFace(
     ...opts
   };
 
-  function getFormat(val: FileFormats, type: string) {
+  function getFormat(val: FileFormats | FontFormats, type: string) {
     const isExt = Object.keys(FONT_TYPES).includes(val);
 
     switch (type) {
@@ -53,7 +53,7 @@ export function fontFace(
     font-family: "${name}";
     src: ${formats
       .map(
-        (format: FileFormats) =>
+        (format: FileFormats | FontFormats) =>
           `url("${filePath}.${getFormat(
             format,
             'extension'
