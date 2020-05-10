@@ -1,4 +1,4 @@
 module.exports = {
-  setupFilesAfterEnv: ['./utils/toMatchString.ts'],
+  setupFilesAfterEnv: ['<rootDir>/.jest/toMatchString.ts'],
   collectCoverage: true
 };
