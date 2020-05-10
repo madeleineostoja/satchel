@@ -72,7 +72,7 @@ const BASE = {
   };
 
 export type NormalizeProps = {
-  base?: 'normalize' | 'normalize-legacy' | 'remedy';
+  base?: 'normalize' | 'normalize-legacy' | 'remedy' | null;
   saneEmbeds?: boolean;
   hiddenProp?: boolean;
   reduceMotion?: boolean;
@@ -91,7 +91,7 @@ export function normalize({
   const features = { hiddenProp, reduceMotion, ...props };
 
   return `
-    ${BASE[base]}
+    ${base ? BASE[base] : ''}
     ${saneEmbeds && base !== 'remedy' ? OPTIONS.saneEmbeds : ''}
     ${Object.keys(features)
       .map((prop) => features[prop] && OPTIONS[prop])

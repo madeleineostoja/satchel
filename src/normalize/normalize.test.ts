@@ -5,7 +5,7 @@ import { normalize } from '.';
 const FIXTURES = {
   extras: `
    ${normalizeCSS}
-     img, svg, video, canvas, audio, iframe, embed, object {
+    img, svg, video, canvas, audio, iframe, embed, object {
       display: block;
       vertical-align: middle;
       max-width: 100%;
@@ -40,6 +40,11 @@ const FIXTURES = {
       font-size: inherit;
       font-weight: inherit;
     }
+  `,
+  noBase: `
+    [hidden] {
+      display: none !important;
+    }
   `
 };
 
@@ -64,5 +69,11 @@ describe('Normalize', () => {
 
   test('Applies extra resets with default base', () => {
     expect(normalize({ resetHeadings: true })).toMatchString(FIXTURES.extras);
+  });
+
+  test('Applies resets with no base', () => {
+    expect(
+      normalize({ base: null, ...disableDefaults, hiddenProp: true })
+    ).toMatchString(FIXTURES.noBase);
   });
 });
