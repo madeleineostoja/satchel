@@ -7,7 +7,7 @@ const BASE = {
     'normalize-legacy': `${normalizeLegacyCSS}`,
     remedy: `${remedyCSS}`
   },
-  OPTIONS = {
+  OPTIONS: any = {
     saneEmbeds: `
       img, svg, video, canvas, audio, iframe, embed, object {
         display: block;
@@ -88,7 +88,7 @@ export function normalize({
   reduceMotion = true,
   ...props
 }: NormalizeProps) {
-  const features = { hiddenProp, reduceMotion, ...props };
+  const features: any = { hiddenProp, reduceMotion, ...props };
 
   return `
     ${base ? BASE[base] : ''}
