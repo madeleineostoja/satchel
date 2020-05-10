@@ -36,10 +36,14 @@
   },
   "homepage": "https://satchel.style",
   "dependencies": {
+    "@csstools/normalize.css": "^10.1.0",
     "css-unit-converter": "^1.1.1",
+    "cssremedy": "0.1.0-beta.2",
+    "modern-normalize": "^0.6.0",
     "parse-unit": "^1.0.1"
   },
   "devDependencies": {
+    "@atomico/rollup-plugin-import-css": "^1.0.3",
     "@babel/core": "^7.9.6",
     "@babel/preset-env": "^7.9.6",
     "@babel/preset-typescript": "^7.9.0",
