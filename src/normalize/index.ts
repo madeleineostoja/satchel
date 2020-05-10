@@ -24,6 +24,12 @@ const BASE = {
         display: none !important;
       }
     `,
+    fontSmoothing: `
+      html {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+    `,
     resetMargins: `
       blockquote,
       dl,
@@ -58,20 +64,21 @@ export type NormalizeProps = {
   hiddenProp?: boolean;
   resetMargins?: boolean;
   resetHeadings?: boolean;
+  fontSmoothing?: boolean;
 };
 
 export function normalize({
   base = 'normalize',
   saneEmbeds = true,
   hiddenProp = true,
-  resetMargins,
-  resetHeadings
+  ...props
 }: NormalizeProps) {
   return `
     ${BASE[base]}
     ${saneEmbeds && base !== 'remedy' ? OPTIONS.saneEmbeds : ''}
     ${hiddenProp ? OPTIONS.hiddenProp : ''}
-    ${resetMargins ? OPTIONS.resetMargins : ''}
-    ${resetHeadings ? OPTIONS.resetHeadings : ''}
+    ${Object.keys(props)
+      .map((prop) => (props[prop] ? OPTIONS[prop] : ''))
+      .join('')}
   `;
 }
