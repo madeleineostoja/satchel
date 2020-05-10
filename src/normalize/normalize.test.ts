@@ -5,7 +5,7 @@ import { normalize } from '.';
 const FIXTURES = {
   extras: `
    ${normalizeCSS}
-    img, svg, video, canvas, audio, iframe, embed, object {
+     img, svg, video, canvas, audio, iframe, embed, object {
       display: block;
       vertical-align: middle;
       max-width: 100%;
@@ -17,6 +17,18 @@ const FIXTURES = {
 
     [hidden] {
       display: none !important;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, ::before, ::after {
+        animation-delay: -1ms !important;
+        animation-duration: 1ms !important;
+        animation-iteration-count: 1 !important;
+        background-attachment: initial !important;
+        scroll-behavior: auto !important;
+        transition-delay: 0s !important;
+        transition-duration: 0s !important;
+      }
     }
 
     h1,
@@ -31,22 +43,26 @@ const FIXTURES = {
   `
 };
 
+const disableDefaults = {
+  saneEmbeds: false,
+  hiddenProp: false,
+  reduceMotion: false
+};
+
 describe('Normalize', () => {
   test('Applies base normalize', () => {
-    expect(
-      normalize({ base: 'normalize', saneEmbeds: false, hiddenProp: false })
-    ).toMatchString(`${normalizeCSS}`);
+    expect(normalize({ base: 'normalize', ...disableDefaults })).toMatchString(
+      `${normalizeCSS}`
+    );
   });
 
   test('Applies alternate base normalize', () => {
-    expect(
-      normalize({ base: 'remedy', saneEmbeds: false, hiddenProp: false })
-    ).toMatchString(`${remedyCSS}`);
+    expect(normalize({ base: 'remedy', ...disableDefaults })).toMatchString(
+      `${remedyCSS}`
+    );
   });
 
   test('Applies extra resets with default base', () => {
-    expect(normalize({ saneEmbeds: true, resetHeadings: true })).toMatchString(
-      FIXTURES.extras
-    );
+    expect(normalize({ resetHeadings: true })).toMatchString(FIXTURES.extras);
   });
 });

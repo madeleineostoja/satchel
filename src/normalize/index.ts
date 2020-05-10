@@ -24,6 +24,19 @@ const BASE = {
         display: none !important;
       }
     `,
+    reduceMotion: `
+      @media (prefers-reduced-motion: reduce) {
+        *, ::before, ::after {
+          animation-delay: -1ms !important;
+          animation-duration: 1ms !important;
+          animation-iteration-count: 1 !important;
+          background-attachment: initial !important;
+          scroll-behavior: auto !important;
+          transition-delay: 0s !important;
+          transition-duration: 0s !important;
+        }
+      }
+    `,
     fontSmoothing: `
       html {
         -webkit-font-smoothing: antialiased;
@@ -62,23 +75,27 @@ export type NormalizeProps = {
   base?: 'normalize' | 'normalize-legacy' | 'remedy';
   saneEmbeds?: boolean;
   hiddenProp?: boolean;
+  reduceMotion?: boolean;
+  fontSmoothing?: boolean;
   resetMargins?: boolean;
   resetHeadings?: boolean;
-  fontSmoothing?: boolean;
 };
 
 export function normalize({
   base = 'normalize',
   saneEmbeds = true,
   hiddenProp = true,
+  reduceMotion = true,
   ...props
 }: NormalizeProps) {
+  const features = { hiddenProp, reduceMotion, ...props };
+
   return `
     ${BASE[base]}
     ${saneEmbeds && base !== 'remedy' ? OPTIONS.saneEmbeds : ''}
-    ${hiddenProp ? OPTIONS.hiddenProp : ''}
-    ${Object.keys(props)
-      .map((prop) => (props[prop] ? OPTIONS[prop] : ''))
+    ${Object.keys(features)
+      .map((prop) => features[prop] && OPTIONS[prop])
+      .filter(Boolean)
       .join('')}
   `;
 }
