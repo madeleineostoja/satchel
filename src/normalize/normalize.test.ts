@@ -15,6 +15,10 @@ const FIXTURES = {
       height: auto;
     }
 
+    [hidden] {
+      display: none !important;
+    }
+
     ol,
     ul {
       list-style: none;
@@ -26,15 +30,15 @@ const FIXTURES = {
 
 describe('Normalize', () => {
   test('Applies base normalize', () => {
-    expect(normalize({ base: 'normalize', saneEmbeds: false })).toMatchString(
-      `${normalizeCSS}`
-    );
+    expect(
+      normalize({ base: 'normalize', saneEmbeds: false, hiddenProp: false })
+    ).toMatchString(`${normalizeCSS}`);
   });
 
   test('Applies alternate base normalize', () => {
-    expect(normalize({ base: 'remedy', saneEmbeds: false })).toMatchString(
-      `${remedyCSS}`
-    );
+    expect(
+      normalize({ base: 'remedy', saneEmbeds: false, hiddenProp: false })
+    ).toMatchString(`${remedyCSS}`);
   });
 
   test('Applies extra resets with default base', () => {
