@@ -1,8 +1,9 @@
+import css from '@atomico/rollup-plugin-import-css';
 import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
 import typescript from '@wessberg/rollup-plugin-ts';
-import { terser } from 'rollup-plugin-terser';
 import peerDeps from 'rollup-plugin-peer-deps-external';
+import { terser } from 'rollup-plugin-terser';
 import pkg from './package.json';
 
 const extensions = ['.ts'];
@@ -28,7 +29,11 @@ export default [
       peerDeps(),
       resolve({ extensions, browser: true }),
       commonjs(),
+      css({
+        minimize: true
+      }),
       typescript({
+        tsconfig: 'tsconfig.prod.json',
         transpiler: 'babel'
       }),
       terser()
