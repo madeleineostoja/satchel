@@ -8,6 +8,7 @@ const FONT_TYPES = {
 } as const;
 
 type FileFormats = keyof typeof FONT_TYPES;
+type FontFormats = typeof FONT_TYPES[FileFormats];
 
 /**
  * Font face declaration generator
@@ -18,15 +19,14 @@ type FileFormats = keyof typeof FONT_TYPES;
 export function fontFace(
   name: string,
   filePath: string,
+  formats: FileFormats[] | FontFormats[] = ['woff2', 'woff'],
   opts?: {
-    formats: any;
     weight?: string | number;
     style?: string;
     display?: string;
   }
 ) {
   const options = {
-    formats: ['woff2', 'woff'],
     weight: 'normal',
     style: 'normal',
     display: 'swap',
@@ -51,7 +51,7 @@ export function fontFace(
   return `
   @font-face {
     font-family: "${name}";
-    src: ${options.formats
+    src: ${formats
       .map(
         (format: FileFormats) =>
           `url("${filePath}.${getFormat(
