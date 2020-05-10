@@ -19,11 +19,14 @@ const FIXTURES = {
       display: none !important;
     }
 
-    ol,
-    ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-size: inherit;
+      font-weight: inherit;
     }
   `
 };
@@ -42,7 +45,7 @@ describe('Normalize', () => {
   });
 
   test('Applies extra resets with default base', () => {
-    expect(normalize({ saneEmbeds: true, resetLists: true })).toMatchString(
+    expect(normalize({ saneEmbeds: true, resetHeadings: true })).toMatchString(
       FIXTURES.extras
     );
   });
