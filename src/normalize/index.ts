@@ -1,10 +1,10 @@
 import normalizeCSS from 'modern-normalize/modern-normalize.css';
-import normalizeCSSLegacy from '@csstools/normalize.css';
+import normalizeLegacyCSS from '@csstools/normalize.css';
 import remedyCSS from 'cssremedy/css/remedy.css';
 
 const BASE = {
     normalize: `${normalizeCSS}`,
-    'normalize-legacy': `${normalizeCSSLegacy}`,
+    'normalize-legacy': `${normalizeLegacyCSS}`,
     remedy: `${remedyCSS}`
   },
   OPTIONS = {
