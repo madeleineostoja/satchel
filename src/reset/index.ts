@@ -9,7 +9,8 @@ const RESETS = {
     color: inherit;
     font: inherit;
     line-height: normal;
-    -webkit-appearance: none;
+    -webkit-appearance: none;'
+    cursor: pointer;
     &::-moz-focus-inner {
       border: 0;
       padding: 0;
