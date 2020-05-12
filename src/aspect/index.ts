@@ -4,17 +4,16 @@ type Options = {
 
 const STYLES = {
   expandable: `
-  &::before {
-    content: '';
-    width: 1px;
-    margin-left: -1px;
-    float: left;
-  }
-  &::after {
-    content: '';
-    display: table;
-    clear: both;
-  }`,
+    &::before {
+      width: 1px;
+      margin-left: -1px;
+      float: left;
+    }
+    &::after {
+      content: '';
+      display: table;
+      clear: both;
+    }`,
   absolute: `
     position: relative;
       & > * {
@@ -25,7 +24,6 @@ const STYLES = {
         left: 0;
       }
       &::before {
-        content: '';
         position: relative;
       }
     `,
@@ -47,6 +45,8 @@ export function aspect(
   return /* css */ `
     ${STYLES[options.mode]}
     &::before {
+      content: '';
+      display: block;
       padding-top: ${(y / x) * 100}%;
     }
   `;
