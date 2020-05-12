@@ -4,20 +4,15 @@ const FIXTURES = {
   basic: `
   @font-face {
     font-family: "My Font";
-    src: url("/assets/fonts/my-font.woff2") format("woff2"),
-      url("/assets/fonts/my-font.woff") format("woff");
-    font-weight: normal;
-    font-style: normal;
+    src: url("/assets/fonts/my-font.woff2") format("woff2");
     font-display: swap;
   }
   `,
   custom: `
   @font-face {
     font-family: "My Font";
-    src: url("/assets/fonts/my-font.woff") format("woff"),
-      url("/assets/fonts/my-font.ttf") format("truetype");
-    font-weight: 700;
-    font-style: italic;
+    src: url("/assets/fonts/my-font.woff2") format("woff2"),
+      url("/assets/fonts/my-font.woff") format("woff");
     font-display: swap;
   }
   `,
@@ -25,32 +20,35 @@ const FIXTURES = {
     @font-face {
       font-family: "My Font";
       src: url("/assets/fonts/my-font.ttf") format("truetype");
-      font-weight: normal;
-      font-style: normal;
+      font-weight: 700;
+      font-style: italic;
       font-display: swap;
     }
   `
 };
 
-describe('Fonts', () => {
-  test('Generates @font-face rules', () => {
-    expect(
-      fontFace('My Font', '/assets/fonts/my-font', ['woff2', 'woff'])
-    ).toMatchString(FIXTURES.basic);
+describe('fontFace', () => {
+  test('Generates @font-face rules with a single font', () => {
+    expect(fontFace('My Font', ['/assets/fonts/my-font.woff2'])).toMatchString(
+      FIXTURES.basic
+    );
   });
 
-  test('Generates @font-face rules with extra config', () => {
+  test('Generates @font-face rules with multiple fonts', () => {
     expect(
-      fontFace('My Font', '/assets/fonts/my-font', ['woff', 'ttf'], {
-        weight: 700,
-        style: 'italic'
-      })
+      fontFace('My Font', [
+        '/assets/fonts/my-font.woff2',
+        '/assets/fonts/my-font.woff'
+      ])
     ).toMatchString(FIXTURES.custom);
   });
 
-  test('Takes font format names', () => {
+  test('Generates @font-face rules with custom config', () => {
     expect(
-      fontFace('My Font', '/assets/fonts/my-font', ['truetype'])
+      fontFace('My Font', ['/assets/fonts/my-font.ttf'], {
+        weight: 700,
+        style: 'italic'
+      })
     ).toMatchString(FIXTURES.format);
   });
 });

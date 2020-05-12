@@ -1,25 +1,21 @@
-const FONT_TYPES: any = {
+const FORMATS = {
   woff: 'woff',
   woff2: 'woff2',
   ttf: 'truetype',
   otf: 'opentype',
   eot: 'embedded-opentype',
   svg: 'svg'
-} as const;
-
-type FileFormats = keyof typeof FONT_TYPES;
-type FontFormats = typeof FONT_TYPES[FileFormats];
+} as any;
 
 /**
  * Font face declaration generator
  * @param name Name of the font family
- * @param filePath Path to the font file (without file extension)
+ * @param files Array of file paths
  * @param options Font options
  */
 export function fontFace(
   name: string,
-  filePath: string,
-  formats: (FileFormats | FontFormats)[] = ['woff2', 'woff'],
+  files: string[],
   opts?: {
     weight?: string | number;
     style?: string;
@@ -27,41 +23,20 @@ export function fontFace(
   }
 ) {
   const options = {
-    weight: 'normal',
-    style: 'normal',
     display: 'swap',
     ...opts
   };
 
-  function getFormat(val: FileFormats | FontFormats, type: string) {
-    const isExt = Object.keys(FONT_TYPES).includes(val);
-
-    switch (type) {
-      case 'extension':
-        return isExt
-          ? val
-          : Object.keys(FONT_TYPES).find((ext) => FONT_TYPES[ext] === val);
-      case 'format':
-        return isExt ? FONT_TYPES[val] : val;
-      default:
-        return '';
-    }
+  function formatFile(file: any) {
+    return file && `url("${file}") format("${FORMATS[file.split('.').pop()]}")`;
   }
 
   return `
   @font-face {
     font-family: "${name}";
-    src: ${formats
-      .map(
-        (format: FileFormats | FontFormats) =>
-          `url("${filePath}.${getFormat(
-            format,
-            'extension'
-          )}") format("${getFormat(format, 'format')}")`
-      )
-      .join(',\n')};
-    font-weight: ${options.weight};
-    font-style: ${options.style};
+    src: ${files.map(formatFile).filter(Boolean).join(',\n')};
+    ${options.weight ? `font-weight: ${options.weight};` : ''}
+    ${options.style ? `font-style: ${options.style};` : ''}
     font-display: ${options.display};
   }
   `;
