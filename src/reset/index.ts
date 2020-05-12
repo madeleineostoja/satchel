@@ -9,7 +9,7 @@ const RESETS = {
     overflow: visible;
     background: transparent;
     line-height: normal;
-    -webkit-appearance: none;'
+    -webkit-appearance: none;
     cursor: pointer;
     &::-moz-focus-inner {
       border: 0;
