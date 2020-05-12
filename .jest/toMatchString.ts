@@ -1,3 +1,5 @@
+import diff from 'jest-diff';
+
 function clean(string) {
   return string.replace(/\s+/g, ' ').trim();
 }
@@ -5,7 +7,7 @@ function clean(string) {
 expect.extend({
   toMatchString(received, expected) {
     return {
-      message: () => `expected ${received} to match ${expected}`,
+      message: () => diff(expected, received, { expand: true }),
       pass: clean(received) === clean(expected)
     };
   }
