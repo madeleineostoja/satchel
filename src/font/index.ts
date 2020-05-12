@@ -15,7 +15,7 @@ const FORMATS = {
  */
 export function fontFace(
   name: string,
-  files: string[],
+  files: any[],
   opts?: {
     weight?: string | number;
     style?: string;
