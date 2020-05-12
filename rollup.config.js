@@ -8,35 +8,32 @@ import pkg from './package.json';
 
 const extensions = ['.ts'];
 
-export default [
-  {
-    input: 'src/index.ts',
-    output: [
-      {
-        file: pkg.main,
-        name: pkg.name,
-        format: 'umd',
-        sourcemap: true
-      },
-      {
-        file: pkg.module,
-        name: pkg.name,
-        format: 'esm',
-        sourcemap: true
-      }
-    ],
-    plugins: [
-      peerDeps(),
-      resolve({ extensions, browser: true }),
-      commonjs(),
-      css({
-        minimize: true
-      }),
-      typescript({
-        tsconfig: 'tsconfig.prod.json',
-        transpiler: 'babel'
-      }),
-      terser()
-    ]
-  }
-];
+export default {
+  input: 'src/index.ts',
+  output: [
+    {
+      file: pkg.main,
+      name: pkg.name,
+      format: 'umd',
+      sourcemap: true
+    },
+    {
+      file: pkg.module,
+      name: pkg.name,
+      format: 'esm',
+      sourcemap: true
+    }
+  ],
+  plugins: [
+    peerDeps(),
+    resolve({ extensions, browser: true }),
+    commonjs(),
+    css({
+      minimize: true
+    }),
+    typescript({
+      transpiler: 'babel'
+    }),
+    terser()
+  ]
+};
