@@ -2,8 +2,10 @@ import { reset } from '.';
 
 const FIXTURES = {
   input: `
-    margin: 0;
+    font: inherit;
+    color: inherit;
     border: 0;
+    margin: 0;
     padding: 0;
     display: inline-block;
     vertical-align: middle;

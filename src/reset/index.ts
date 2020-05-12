@@ -1,8 +1,8 @@
 const RESETS = {
   button: `
-  font: inherit;
-  color: inherit;
-    border: none;
+    font: inherit;
+    color: inherit;
+    border: 0;
     margin: 0;
     padding: 0;
     width: auto;
@@ -19,8 +19,8 @@ const RESETS = {
   input: `
     font: inherit;
     color: inherit;
-    margin: 0;
     border: 0;
+    margin: 0;
     padding: 0;
     display: inline-block;
     vertical-align: middle;
