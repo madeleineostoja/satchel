@@ -3,7 +3,7 @@
  */
 export const subgrid = `
   display: grid;
-  grid-column: 1 / 99;
+  grid-column: 1 / 99 !important;
   grid: inherit;
   grid-gap: inherit;
   grid-template-columns: inherit;
