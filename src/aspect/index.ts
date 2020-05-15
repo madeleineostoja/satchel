@@ -17,7 +17,7 @@ const STYLES = {
   absolute: `
     position: relative;
       & > * {
-        position: absolute;
+        position: absolute !important;
         top: 0;
         right: 0;
         bottom: 0;
