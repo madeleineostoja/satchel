@@ -28,6 +28,13 @@ const FIXTURES = {
     right: 2rem;
     bottom: 3rem;
     left: auto;
+  `,
+  withImportant: `
+    position: absolute !important;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
   `
 };
 
@@ -54,5 +61,11 @@ describe('Positioning', () => {
 
   test('Works with number', () => {
     expect(position('absolute', 0)).toMatchString(FIXTURES.singleUnit);
+  });
+
+  test('Carries !important', () => {
+    expect(position('absolute', `0 !important`)).toMatchString(
+      FIXTURES.withImportant
+    );
   });
 });

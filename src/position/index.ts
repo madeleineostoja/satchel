@@ -9,6 +9,7 @@ function parseValues(
   right: string;
   left: string;
   bottom: string;
+  important: boolean;
 } {
   const valueArray = values.match(
       /(([\+\-]?[0-9\.]+)(%|px|pt|em|rem|in|cm|mm|ex|pc|vw)?)|(calc\(([^\)]+)\)|null|false|undefined|auto)/g
@@ -44,7 +45,7 @@ function parseValues(
       );
       break;
   }
-  return positions;
+  return { ...positions, important: /!important$/.test(values) };
 }
 
 /**
@@ -53,10 +54,12 @@ function parseValues(
  * @param values Shorthand value string
  */
 export function position(position: string, values: string | number) {
-  const { top, right, bottom, left } = parseValues(values.toString());
+  const { top, right, bottom, left, important } = parseValues(
+    values.toString()
+  );
 
   return `
-    position: ${position};
+    position: ${position}${important ? ' !important' : ''};
     top: ${top};
     right: ${right};
     bottom: ${bottom};
