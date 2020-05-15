@@ -1,12 +1,12 @@
-import normalizeCSS from 'modern-normalize/modern-normalize.css';
 import remedyCSS from 'cssremedy/css/remedy.css';
+import normalizeCSS from 'modern-normalize/modern-normalize.css';
 import { normalize } from '.';
 
 const FIXTURES = {
   extras: `
    ${normalizeCSS}
     img, svg, video, canvas, audio, iframe, embed, object {
-      display: block;
+      display: inline-block;
       vertical-align: middle;
       max-width: 100%;
     }

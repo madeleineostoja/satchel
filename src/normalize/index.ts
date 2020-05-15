@@ -1,6 +1,6 @@
-import normalizeCSS from 'modern-normalize/modern-normalize.css';
 import normalizeLegacyCSS from '@csstools/normalize.css';
 import remedyCSS from 'cssremedy/css/remedy.css';
+import normalizeCSS from 'modern-normalize/modern-normalize.css';
 
 const BASE = {
     normalize: `${normalizeCSS}`,
@@ -10,7 +10,7 @@ const BASE = {
   OPTIONS: any = {
     saneEmbeds: `
       img, svg, video, canvas, audio, iframe, embed, object {
-        display: block;
+        display: inline-block;
         vertical-align: middle;
         max-width: 100%;
       }
