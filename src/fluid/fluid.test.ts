@@ -1,6 +1,5 @@
 import { fluid } from '.';
 
-// prettier-ignore
 const FIXTURES = {
   matchingUnits: `
     font-size: calc(15px + 4 * ((100vw - 400px) / 880));

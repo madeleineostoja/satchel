@@ -1,5 +1,5 @@
 import parseUnit from 'parse-unit';
-import convert from 'css-unit-converter';
+import convert, { CSSUnits } from 'css-unit-converter';
 
 /**
  * Create fluid sizes based on viewport width
@@ -28,15 +28,16 @@ export function fluid(
       };
 
     if (units.a !== units.b) {
-      values.b = convert(values.b, units.b, units.a);
+      values.b = convert(values.b, units.b as CSSUnits, units.a as CSSUnits);
     }
 
     return values.b - values.a;
   }
 
-  // prettier-ignore
   return `
-    ${property}: calc(${min} + ${getDifference(min,max)} * ((100vw - ${options.minScreenSize}) / ${getDifference(options.minScreenSize, options.maxScreenSize)}));
+    ${property}: calc(${min} + ${getDifference(min, max)} * ((100vw - ${
+    options.minScreenSize
+  }) / ${getDifference(options.minScreenSize, options.maxScreenSize)}));
 
     @media (max-width: ${options.minScreenSize}) {
       ${property}: ${min};
