@@ -1,5 +1,5 @@
 /**
- * Basic 'display: subgrid' shim
+ * Basic 'display: subgrid' shim for full-width grids
  */
 export const subgrid = `
   display: grid;
@@ -13,7 +13,7 @@ export const subgrid = `
  * Shim grid row auto-placement in IE11
  * @param n Number of rows to shim
  */
-export function msGridRows(n = 5) {
+export function msGridRows(n: number = 5) {
   const rows = [];
 
   for (let i = 1; i <= n; i++) {

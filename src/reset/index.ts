@@ -48,7 +48,6 @@ const RESETS = {
     padding: 0.01em 0 0 0;
     margin: 0;
     min-width: 0;
-
     body:not(:-moz-handler-blocked) & {
       display: table-cell;
     }

@@ -1,4 +1,4 @@
-// NOTE: Selectors aren't grouped because if a browser doesn't understand a
+// Selectors aren't grouped because if a browser doesn't understand a
 // single selector in a group the whole group is ignored
 // See https://www.w3.org/TR/selectors-3/#Conformance
 
