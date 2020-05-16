@@ -72,7 +72,7 @@ const BASE = {
   };
 
 export type NormalizeProps = {
-  base?: 'normalize' | 'normalize-legacy' | 'remedy' | null;
+  base?: keyof typeof BASE | null;
   saneEmbeds?: boolean;
   hiddenProp?: boolean;
   reduceMotion?: boolean;
