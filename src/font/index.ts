@@ -1,3 +1,4 @@
+type FontExtensions = keyof typeof FORMATS;
 const FORMATS = {
   woff: 'woff',
   woff2: 'woff2',
@@ -5,7 +6,7 @@ const FORMATS = {
   otf: 'opentype',
   eot: 'embedded-opentype',
   svg: 'svg'
-} as any;
+};
 
 /**
  * Font face declaration generator
@@ -15,7 +16,7 @@ const FORMATS = {
  */
 export function fontFace(
   name: string,
-  files: any[],
+  files: string[],
   opts?: {
     weight?: string | number;
     style?: string;
@@ -27,8 +28,17 @@ export function fontFace(
     ...opts
   };
 
-  function formatFile(file: any) {
-    return file && `url("${file}") format("${FORMATS[file.split('.').pop()]}")`;
+  function formatFile(file: string) {
+    if (!file) {
+      return null;
+    }
+
+    return (
+      file &&
+      `url("${file}") format("${
+        FORMATS[file.split('.').pop() as FontExtensions]
+      }")`
+    );
   }
 
   return `
