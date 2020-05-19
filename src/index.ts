@@ -7,5 +7,5 @@ export * from './normalize';
 export * from './position';
 export * from './range';
 export * from './reset';
-export * from './subgrid';
+export * from './grid';
 export * from './typography';

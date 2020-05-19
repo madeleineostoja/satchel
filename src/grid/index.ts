@@ -1,4 +1,19 @@
 /**
+ * Mixin for creating simple flex-based grids
+ * @param gutter Width of grid guttres
+ */
+export function flexGrid(gutter: string = '2rem') {
+  return `
+    display: flex;
+    flex-wrap: wrap;
+    margin: calc(0px - (${gutter} / 2));
+    & > * {
+      padding: calc(${gutter} / 2);
+    }
+  `;
+}
+
+/**
  * Basic 'display: subgrid' shim for full-width grids
  */
 export const subgrid = `
