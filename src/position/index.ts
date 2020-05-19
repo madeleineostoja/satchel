@@ -53,7 +53,10 @@ function parseValues(
  * @param position Position property to generate
  * @param values Shorthand value string
  */
-export function position(position: string, values: string | number) {
+export function position(
+  position: 'relative' | 'absolute' | 'fixed' | 'sticky',
+  values: string | number
+) {
   const { top, right, bottom, left, important } = parseValues(
     values.toString()
   );
