@@ -18,10 +18,12 @@ export function flexGrid(gutter: string = '2rem') {
  */
 export const subgrid = `
   display: grid;
-  grid-column: 1 / 99 !important;
+  grid-column: 1 / -1 !important;
   grid: inherit;
   grid-gap: inherit;
   grid-template-columns: inherit;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 99;
 `;
 
 /**
