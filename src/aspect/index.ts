@@ -39,7 +39,7 @@ export function aspect(
   x: number,
   y: number,
   options: Options = {
-    mode: 'expandable'
+    mode: 'absolute'
   }
 ) {
   return /* css */ `
