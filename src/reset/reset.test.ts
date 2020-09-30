@@ -12,7 +12,6 @@ const FIXTURES = {
     white-space: normal;
     background: none;
     line-height: 1;
-    overflow: auto;
     -webkit-appearance: none;
   `
 };
