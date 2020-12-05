@@ -1,4 +1,4 @@
-import { lineCrop } from '.';
+import { lineCrop, lineClamp } from '.';
 
 const FIXTURES = {
   lineCrop: {
@@ -18,7 +18,12 @@ const FIXTURES = {
       width: 0;
       margin-top: calc(-0.25 * 0.5em);
     }`
-  }
+  },
+  lineClamp: `
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;`
 };
 
 describe('Typography', () => {
@@ -28,5 +33,9 @@ describe('Typography', () => {
 
   test('Applies lineCrop with modifier', () => {
     expect(lineCrop(1, 0.75)).toMatchString(FIXTURES.lineCrop.withModifier);
+  });
+
+  test('Applies lineClamp', () => {
+    expect(lineClamp(3)).toMatchString(FIXTURES.lineClamp);
   });
 });

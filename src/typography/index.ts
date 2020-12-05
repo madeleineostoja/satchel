@@ -21,3 +21,16 @@ export function lineCrop(lineHeight: number, modifier: number = 1) {
     }
   `;
 }
+
+/**
+ * Clamp text to a numbner of lines
+ * @param n Number of lines to clamp to
+ */
+export function lineClamp(n: number) {
+  return `
+    display: -webkit-box;
+    -webkit-line-clamp: ${n};
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  `;
+}
