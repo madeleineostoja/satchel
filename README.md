@@ -4,22 +4,22 @@
 
 Satchel is a tiny collection of JavaScript utilities designed to be used in CSS-in-JS. \*\*\*\*It automates common patterns, saves time, encourages consistency, and makes developers' lives easier.
 
-### Features
+## Features
 
-- Configurable normalization
-- Element-specific resets
-- Automagical fluid units
-- Low-level grid helpers
-- Aspect-ratio tools
-- Color transforms
-- Font importer
-- Positioning shorthands
-- Range element abstractions
-- Clearfix
+- [Configurable normalization](https://docs.satchel.style/normalize)
+- [Element-specific resets](https://docs.satchel.style/reset)
+- [Automagical fluid units](https://docs.satchel.style/fluid)
+- [Low-level grid helpers](https://docs.satchel.style/grids)
+- [Aspect-ratio tools](https://docs.satchel.style/aspect)
+- [Color transforms](https://docs.satchel.style/color)
+- [Font importer](https://docs.satchel.style/font)
+- [Positioning shorthands](https://docs.satchel.style/position)
+- [Range element abstractions](https://docs.satchel.style/range)
+- [Clearfix](https://docs.satchel.style/clearfix)
 
-All of Satchel’s utilities return plain strings, so they work almost everywhere. The only prerequisite is that your environment supports [nested CSS selectors](https://tabatkins.github.io/specs/css-nesting/#nest-selector). Popular CSS-in-JS frameworks like [styled-components](https://styled-components.com/), [Emotion](https://emotion.sh/), [Linaria](https://linaria.now.sh/), and any other tool built on top of the [Stylis](https://github.com/thysultan/stylis.js) preprocessor work out of the box.
+All of Satchel’s utilities return plain strings, so they work almost everywhere. The only prerequisite is that your environment supports [nested CSS selectors](https://docs.satchel.style/https://tabatkins.github.io/specs/css-nesting/#nest-selector). Popular CSS-in frameworks like [styled-components](https://styled-components.com/), [Emotion](https://emotion.sh/), [Linaria](https://linaria.now.sh/), and any other tool built on top of the [Stylis](https://github.com/thysultan/stylis.js) preprocessor work out of the box.
 
-### Installation & Usage
+## Installation & Usage
 
 Install Satchel from NPM
 
@@ -46,6 +46,6 @@ const headingStyles = css`
 `;
 ```
 
-### API
+## API
 
 Read the full documentation at **[satchel.style](https://satchel.style)**
