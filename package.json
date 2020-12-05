@@ -37,6 +37,7 @@
   "homepage": "https://satchel.style",
   "dependencies": {
     "@csstools/normalize.css": "^10.1.0",
+    "color-name": "^1.1.4",
     "css-unit-converter": "^1.1.1",
     "cssremedy": "0.1.0-beta.2",
     "modern-normalize": "^0.6.0",

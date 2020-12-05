@@ -1,3 +1,5 @@
+import colors from 'color-name';
+
 function rgbToHex(r: number, g: number, b: number): string {
   return `#${((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1)}`;
 }
@@ -18,11 +20,15 @@ function hexToRgb(hexString: string): number[] {
 
 /**
  * Generate rgba colours from a hex code
- * @param hex Hex code
+ * @param value Hex code or color keyword
  * @param alpha Alpha amout
  */
-export function rgba(hex: string, alpha = 1) {
-  return `rgba(${hexToRgb(hex)}, ${alpha})`;
+export function rgba(value: string, alpha = 1) {
+  return `rgba(${
+    value.charAt(0) === '#'
+      ? hexToRgb(value)
+      : colors[value as keyof typeof colors].join(',')
+  }, ${alpha})`;
 }
 
 /**
