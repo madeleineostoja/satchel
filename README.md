@@ -6,19 +6,19 @@ Satchel is a tiny collection of CSS-in-JS utilities that automates common patter
 
 ## Features
 
-- [Configurable normalization](https://docs.satchel.style/normalize)
-- [Element-specific resets](https://docs.satchel.style/reset)
-- [Automagical fluid units](https://docs.satchel.style/fluid)
-- [Low-level grid helpers](https://docs.satchel.style/grids)
-- [Aspect-ratio tools](https://docs.satchel.style/aspect)
-- [Color transforms](https://docs.satchel.style/color)
-- [Font importer](https://docs.satchel.style/font)
-- [Typography helpers](https://docs.satchel.style/typography)
-- [Positioning shorthands](https://docs.satchel.style/position)
-- [Range element abstractions](https://docs.satchel.style/range)
-- [Clearfix](https://docs.satchel.style/clearfix)
+- [Configurable normalization](https://www.satchel.style/normalize)
+- [Element-specific resets](https://www.satchel.style/reset)
+- [Automagical fluid units](https://www.satchel.style/fluid)
+- [Low-level grid helpers](https://www.satchel.style/grids)
+- [Aspect-ratio tools](https://www.satchel.style/aspect)
+- [Color transforms](https://www.satchel.style/color)
+- [Font importer](https://www.satchel.style/font)
+- [Typography helpers](https://www.satchel.style/typography)
+- [Positioning shorthands](https://www.satchel.style/position)
+- [Range element abstractions](https://www.satchel.style/range)
+- [Clearfix](https://www.satchel.style/clearfix)
 
-All of Satchel’s utilities return plain strings, so they work almost everywhere. The only prerequisite is that your environment supports [nested CSS selectors](https://docs.satchel.style/https://tabatkins.github.io/specs/css-nesting/#nest-selector). Popular CSS-in frameworks like [styled-components](https://styled-components.com/), [Emotion](https://emotion.sh/), [Linaria](https://linaria.now.sh/), and any other tool built on top of the [Stylis](https://github.com/thysultan/stylis.js) preprocessor work out of the box.
+All of Satchel’s utilities return plain strings, so they work almost everywhere. The only prerequisite is that your environment supports [nested CSS selectors](https://tabatkins.github.io/specs/css-nesting/#nest-selector). Popular CSS-in frameworks like [styled-components](https://styled-components.com/), [Emotion](https://emotion.sh/), [Linaria](https://linaria.now.sh/), and any other tool built on top of the [Stylis](https://github.com/thysultan/stylis.js) preprocessor work out of the box.
 
 ## Installation & Usage
 
