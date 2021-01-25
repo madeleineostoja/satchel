@@ -2,7 +2,7 @@
 
 [![NPM](https://img.shields.io/npm/v/satchel-css)](https://www.npmjs.com/package/satchel-css) [![Jest](https://github.com/peppercornstudio/satchel/workflows/tests/badge.svg?branch=master&event=push)](https://github.com/peppercornstudio/satchel/actions?query=workflow%3Atests) [![Codecov](https://img.shields.io/codecov/c/github/peppercornstudio/satchel)](https://codecov.io/gh/peppercornstudio/satchel) [![License](https://img.shields.io/npm/l/satchel-css)](https://github.com/peppercornstudio/satchel/blob/master/LICENSE.md)
 
-Satchel is a tiny collection of JavaScript utilities designed to be used in CSS-in-JS. \*\*\*\*It automates common patterns, saves time, encourages consistency, and makes developers' lives easier.
+Satchel is a tiny collection of CSS-in-JS utilities that automates common patterns, saves time, encourages consistency, and makes developers' lives easier.
 
 ## Features
 
@@ -18,7 +18,7 @@ Satchel is a tiny collection of JavaScript utilities designed to be used in CSS-
 - [Range element abstractions](https://www.satchel.style/range)
 - [Clearfix](https://www.satchel.style/clearfix)
 
-All of Satchel’s utilities return plain strings, so they work almost everywhere. The only prerequisite is that your environment supports [nested CSS selectors](https://www.satchel.style/https://tabatkins.github.io/specs/css-nesting/#nest-selector). Popular CSS-in frameworks like [styled-components](https://styled-components.com/), [Emotion](https://emotion.sh/), [Linaria](https://linaria.now.sh/), and any other tool built on top of the [Stylis](https://github.com/thysultan/stylis.js) preprocessor work out of the box.
+All of Satchel’s utilities return plain strings, so they work almost everywhere. The only prerequisite is that your environment supports [nested CSS selectors](https://tabatkins.github.io/specs/css-nesting/#nest-selector). Popular CSS-in frameworks like [styled-components](https://styled-components.com/), [Emotion](https://emotion.sh/), [Linaria](https://linaria.now.sh/), and any other tool built on top of the [Stylis](https://github.com/thysultan/stylis.js) preprocessor work out of the box.
 
 ## Installation & Usage
 
