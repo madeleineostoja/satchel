@@ -17,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/radioactivepesto/satchel.git"
+    "url": "git+https://github.com/peppercornstudio/satchel.git"
   },
   "keywords": [
     "css-in-js",
@@ -29,10 +29,10 @@
     "react",
     "functional-css"
   ],
-  "author": "Radioactive Pesto (https://radioactivepesto.com)",
+  "author": "Peppercorn Studio (https://peppercornstudio.com)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/radioactivepesto/satchel/issues"
+    "url": "https://github.com/peppercornstudio/satchel/issues"
   },
   "homepage": "https://satchel.style",
   "dependencies": {

@@ -1,24 +1,24 @@
 # Satchel
 
-[![NPM](https://img.shields.io/npm/v/satchel-css)](https://www.npmjs.com/package/satchel-css) [![Jest](https://github.com/radioactivepesto/satchel/workflows/tests/badge.svg?branch=master&event=push)](https://github.com/radioactivepesto/satchel/actions?query=workflow%3Atests) [![Codecov](https://img.shields.io/codecov/c/github/radioactivepesto/satchel)](https://codecov.io/gh/radioactivepesto/satchel) [![License](https://img.shields.io/npm/l/satchel-css)](https://github.com/radioactivepesto/satchel/blob/master/LICENSE.md)
+[![NPM](https://img.shields.io/npm/v/satchel-css)](https://www.npmjs.com/package/satchel-css) [![Jest](https://github.com/peppercornstudio/satchel/workflows/tests/badge.svg?branch=master&event=push)](https://github.com/peppercornstudio/satchel/actions?query=workflow%3Atests) [![Codecov](https://img.shields.io/codecov/c/github/peppercornstudio/satchel)](https://codecov.io/gh/peppercornstudio/satchel) [![License](https://img.shields.io/npm/l/satchel-css)](https://github.com/peppercornstudio/satchel/blob/master/LICENSE.md)
 
 Satchel is a tiny collection of JavaScript utilities designed to be used in CSS-in-JS. \*\*\*\*It automates common patterns, saves time, encourages consistency, and makes developers' lives easier.
 
 ## Features
 
-- [Configurable normalization](https://docs.satchel.style/normalize)
-- [Element-specific resets](https://docs.satchel.style/reset)
-- [Automagical fluid units](https://docs.satchel.style/fluid)
-- [Low-level grid helpers](https://docs.satchel.style/grids)
-- [Aspect-ratio tools](https://docs.satchel.style/aspect)
-- [Color transforms](https://docs.satchel.style/color)
-- [Font importer](https://docs.satchel.style/font)
-- [Typography helpers](https://docs.satchel.style/typography)
-- [Positioning shorthands](https://docs.satchel.style/position)
-- [Range element abstractions](https://docs.satchel.style/range)
-- [Clearfix](https://docs.satchel.style/clearfix)
+- [Configurable normalization](https://www.satchel.style/normalize)
+- [Element-specific resets](https://www.satchel.style/reset)
+- [Automagical fluid units](https://www.satchel.style/fluid)
+- [Low-level grid helpers](https://www.satchel.style/grids)
+- [Aspect-ratio tools](https://www.satchel.style/aspect)
+- [Color transforms](https://www.satchel.style/color)
+- [Font importer](https://www.satchel.style/font)
+- [Typography helpers](https://www.satchel.style/typography)
+- [Positioning shorthands](https://www.satchel.style/position)
+- [Range element abstractions](https://www.satchel.style/range)
+- [Clearfix](https://www.satchel.style/clearfix)
 
-All of Satchel’s utilities return plain strings, so they work almost everywhere. The only prerequisite is that your environment supports [nested CSS selectors](https://docs.satchel.style/https://tabatkins.github.io/specs/css-nesting/#nest-selector). Popular CSS-in frameworks like [styled-components](https://styled-components.com/), [Emotion](https://emotion.sh/), [Linaria](https://linaria.now.sh/), and any other tool built on top of the [Stylis](https://github.com/thysultan/stylis.js) preprocessor work out of the box.
+All of Satchel’s utilities return plain strings, so they work almost everywhere. The only prerequisite is that your environment supports [nested CSS selectors](https://www.satchel.style/https://tabatkins.github.io/specs/css-nesting/#nest-selector). Popular CSS-in frameworks like [styled-components](https://styled-components.com/), [Emotion](https://emotion.sh/), [Linaria](https://linaria.now.sh/), and any other tool built on top of the [Stylis](https://github.com/thysultan/stylis.js) preprocessor work out of the box.
 
 ## Installation & Usage
 
@@ -49,4 +49,4 @@ const headingStyles = css`
 
 ## API
 
-Read the full documentation at **[satchel.style](https://satchel.style)**
+Read the full documentation at **[satchel.style](https://www.satchel.style)**
