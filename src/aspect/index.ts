@@ -1,9 +1,9 @@
 type Options = {
-  mode: 'expandable' | 'absolute' | 'lite';
+  mode: 'expandable' | 'absolute' | 'image' | 'lite';
 };
 
-const STYLES = {
-  expandable: `
+export const MODES = {
+  expandable: /* css */ `
     &::before {
       width: 1px;
       margin-left: -1px;
@@ -14,7 +14,7 @@ const STYLES = {
       display: table;
       clear: both;
     }`,
-  absolute: `
+  absolute: /* css */ `
     position: relative;
       & > * {
         position: absolute !important;
@@ -29,7 +29,16 @@ const STYLES = {
         position: relative;
       }
     `,
-  lite: ''
+  lite: '',
+  get image() {
+    return /* css */ `
+      ${this.absolute}
+      overflow: hidden;
+      & > img {
+        object-fit: cover;
+        object-position: center;
+      }`;
+  }
 };
 
 /**
@@ -45,7 +54,7 @@ export function aspect(
   }
 ) {
   return /* css */ `
-    ${STYLES[options.mode]}
+    ${MODES[options.mode]}
     &::before {
       content: '';
       display: block;
